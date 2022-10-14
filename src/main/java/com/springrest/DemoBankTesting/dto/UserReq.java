@@ -1,22 +1,16 @@
-package com.springrest.DemoBankTesting.model;
+package com.springrest.DemoBankTesting.dto;
 
-
-import lombok.*;
-
-import javax.persistence.*;
-
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-@Data
-//@Table(name = "users" )
-public class User {
+public class UserReq {
 
-    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String firstName;
     private String lastName;
@@ -24,5 +18,4 @@ public class User {
     private String mail;
     private long mobile;
     private String password;
-
 }

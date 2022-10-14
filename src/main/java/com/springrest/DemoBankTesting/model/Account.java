@@ -1,19 +1,17 @@
 package com.springrest.DemoBankTesting.model;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
+@Data
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "accounts" )
+//@Table(name = "accounts" )
 
 public class Account {
 
@@ -22,4 +20,13 @@ public class Account {
     private long id;
     private String accName;
     private long balance;
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "id=" + id +
+                ", accName='" + accName + '\'' +
+                ", balance=" + balance +
+                '}';
+    }
 }
