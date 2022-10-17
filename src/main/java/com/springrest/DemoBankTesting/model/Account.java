@@ -1,6 +1,7 @@
 package com.springrest.DemoBankTesting.model;
 
 
+import com.springrest.DemoBankTesting.exception.InvalidAvailabilityException;
 import lombok.*;
 
 import javax.persistence.*;
@@ -11,7 +12,7 @@ import javax.persistence.*;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-//@Table(name = "accounts" )
+@Table(name = "accounts" )
 
 public class Account {
 
@@ -19,6 +20,7 @@ public class Account {
 //    @GeneratedValue(strategy= GenerationType.AUTO)
     private long id;
     private String accName;
+
     private long balance;
 
     @Override
@@ -29,4 +31,5 @@ public class Account {
                 ", balance=" + balance +
                 '}';
     }
+
 }
