@@ -3,7 +3,6 @@ package com.springrest.DemoBankTesting.service;
 import com.springrest.DemoBankTesting.model.User;
 import com.springrest.DemoBankTesting.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service

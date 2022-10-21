@@ -1,11 +1,13 @@
 package com.springrest.DemoBankTesting.service;
 
+import com.springrest.DemoBankTesting.exception.DatabaseWriteException;
 import com.springrest.DemoBankTesting.model.Account;
 import com.springrest.DemoBankTesting.repository.AccountRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.security.auth.login.AccountNotFoundException;
+import java.sql.SQLException;
 import java.util.Optional;
 
 @Service
@@ -29,6 +31,12 @@ public class AccountService {
             throw new AccountNotFoundException();
         }
     }
-
+    public void addData(Account account){
+        try {
+            accountRepository.save(account);
+        }catch (Exception e){
+           throw new DatabaseWriteException("error");
+        }
+    }
 
 }
